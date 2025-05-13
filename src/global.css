@@ -1,0 +1,59 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #1a1a1a;
+  --text-light: #000;
+  --text-dark: #fff;
+  --accent: #4f46e5;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--accent);
+  color: #fff;
+}
+
+.container {
+  padding: 2rem;
+  background: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
