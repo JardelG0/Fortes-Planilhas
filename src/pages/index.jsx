@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import { Button, Spinner, Toggle } from 'shadcn-ui';
 import '../global.css';
 
 export default function Home() {
@@ -74,7 +73,14 @@ export default function Home() {
     <div className={darkMode ? 'dark' : ''}>
       <header className="header">
         <h1>Comparador de Planilhas</h1>
-        <Toggle checked={darkMode} onChange={setDarkMode} aria-label="Toggle Dark Mode" />
+        <label>
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={() => setDarkMode(!darkMode)}
+          />
+          Dark Mode
+        </label>
       </header>
       <main className="container">
         <div className="input-group">
@@ -88,11 +94,11 @@ export default function Home() {
           </label>
         </div>
         {error && <p className="error">{error}</p>}
-        <Button onClick={processar} disabled={loading}>
-          {loading ? <Spinner size="sm" /> : 'Comparar e Exportar'}
-        </Button>
+        <button onClick={processar} disabled={loading}>
+          {loading ? 'Processando...' : 'Comparar e Exportar'}
+        </button>
       </main>
-      <footer className="footer">Drag & drop ou selecione os arquivos para iniciar</footer>
+      <footer className="footer">Arraste ou selecione os arquivos para iniciar</footer>
     </div>
   );
 }
